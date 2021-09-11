@@ -8,6 +8,7 @@ target 'WeatherInfo' do
   # Pods for WeatherInfo
 	pod 'RxSwift'
 	pod 'RxCocoa'
+  pod 'IQKeyboardManagerSwift'
 
   target 'WeatherInfoTests' do
     inherit! :search_paths

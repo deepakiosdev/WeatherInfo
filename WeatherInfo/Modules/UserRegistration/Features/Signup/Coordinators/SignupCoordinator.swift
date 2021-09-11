@@ -28,7 +28,7 @@ class SignupCoordinator: BaseCoordinator<Void> {
         
         viewModel.showLogin
             .subscribe(onNext:
-                        { [weak self] in
+                        { [weak self] _ in
                             self?.showLoginScreen()
                         })
             .disposed(by: disposeBag)
