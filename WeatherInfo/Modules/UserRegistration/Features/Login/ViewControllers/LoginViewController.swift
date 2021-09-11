@@ -9,6 +9,9 @@ import UIKit
 import RxSwift
 
 class LoginViewController: UIViewController, StoryboardInitializable {
+    
+    @IBOutlet weak var txfEmail: UITextField!
+    @IBOutlet weak var txfPassword: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnSignup: UIButton!
     
@@ -18,36 +21,43 @@ class LoginViewController: UIViewController, StoryboardInitializable {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         setupBindings()
     }
 
-  
-    private func setupUI() {
-    }
+}
 
+// MARK: - Binding
+
+extension LoginViewController {
     private func setupBindings() {
 
         // View Model outputs to the View Controller
+
+        txfEmail.rx.text
+            .map{$0 ?? ""}
+            .bind(to: viewModel.email)
+            .disposed(by: disposeBag)
+
+        txfPassword.rx.text
+            .map{$0 ?? ""}
+            .bind(to: viewModel.password)
+            .disposed(by: disposeBag)
+        
         btnLogin.rx.tap
-            .bind(to: viewModel.showHomeScreen)
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.login()
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.isValidLoginInfo()
+            .map {$0 ? 1 : 0.4}
+            .bind(to: btnLogin.rx.alpha)
             .disposed(by: disposeBag)
 
         btnSignup.rx.tap
             .bind(to: viewModel.showSignup)
             .disposed(by: disposeBag)
+        
 
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

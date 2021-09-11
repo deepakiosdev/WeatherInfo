@@ -16,7 +16,9 @@ class LoginCoordinator: BaseCoordinator<Void> {
     }
 
     override func start() -> Observable<Void> {
-        let viewModel = LoginViewModel()
+        let coreDataManager = CoreDataManager()
+        let loginService = LoginService.init(managedObjectContext: coreDataManager.mainContext, coreDataStack: coreDataManager)
+        let viewModel = LoginViewModel(loginService: loginService)
         let viewController = LoginViewController.initFromStoryboard()
         viewController.viewModel = viewModel
         navigationController.pushViewController(viewController, animated: true)
@@ -31,7 +33,7 @@ class LoginCoordinator: BaseCoordinator<Void> {
         viewModel.showHomeScreen
             .debug()
             .subscribe(onNext:
-                        { [weak self] in
+                        { [weak self] _ in
                 self?.showTabBarScreen()
             })
             .disposed(by: disposeBag)

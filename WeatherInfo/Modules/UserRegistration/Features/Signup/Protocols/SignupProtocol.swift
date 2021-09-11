@@ -11,6 +11,6 @@ import RxSwift
 import RxCocoa
 
 protocol SignupProtocol {
-    func saveUserInDB()
+    func saveUserInDB(_ user: User)
     func signup()
 }

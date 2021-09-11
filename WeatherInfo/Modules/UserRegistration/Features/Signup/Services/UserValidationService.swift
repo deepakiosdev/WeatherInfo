@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 struct UserValidationService: UserValidationProtocol {
@@ -13,12 +14,7 @@ struct UserValidationService: UserValidationProtocol {
     func isValidName(_ name: String) -> Bool {
         return name.count > 3
     }
-    func isValidEmail(_ email: String) -> Bool {
-        return email.count > 8 && email.contains("@") && email.contains(".")
-    }
-    func isValidPassword(_ password: String) -> Bool {
-        return password.count > 6
-    }
+    
     func isValidDob(_ dob: String) -> Bool {
         return dob.count > 7
     }
@@ -27,8 +23,47 @@ struct UserValidationService: UserValidationProtocol {
         return Gender.init(rawValue: gender.lowercased()) != nil
     }
     
-    func isValidUser() -> Bool {
+    func isValidUser(_ user: User) -> Bool {
+        
+        if !isValidName(user.name ?? "") {
+            showAlertWithMessage("Name should be more than 3 character")
+            return false
+        }
+        
+        if !isValidEmail(user.email ?? "") {
+            showAlertWithMessage("Please enter valid email address")
+            return false
+        }
+        
+        if !isValidPassword(user.password ?? "") {
+            showAlertWithMessage("Password should be more than 6 character")
+            return false
+        }
+        
+        if !isValidDob(user.dob ?? "") {
+            showAlertWithMessage("Please enter valid date of birth")
+            return false
+        }
+        
+        if !isValidGender(user.gender ?? "") {
+            showAlertWithMessage("Please enter valid gender")
+            return false
+        }
         
         return true
+    }
+    
+    private func showAlertWithMessage(_ message: String) {
+        let alert = UIAlertController(title: "Alert",
+                                      message: message,
+                                      preferredStyle: .alert)
+
+
+         // Add action buttons to it and attach handler functions if you want to
+
+         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+
+        // Show the alert by presenting it
+        UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController?.present(alert, animated: true)
     }
 }

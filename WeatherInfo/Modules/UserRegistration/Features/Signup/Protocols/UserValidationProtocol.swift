@@ -13,12 +13,10 @@ enum Gender: String {
     case other
 }
 
-protocol UserValidationProtocol {
+protocol UserValidationProtocol: EmailPasswordValidationProtocol {
     func isValidName(_ name: String) -> Bool
-    func isValidEmail(_ email: String) -> Bool
-    func isValidPassword(_ password: String) -> Bool
     func isValidDob(_ dob: String) -> Bool
     func isValidGender(_ gender: String) -> Bool
-    func isValidUser() -> Bool
+    func isValidUser(_ user: User) -> Bool
 }
 

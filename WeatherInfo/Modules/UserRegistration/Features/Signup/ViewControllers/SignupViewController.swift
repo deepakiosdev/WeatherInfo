@@ -39,7 +39,7 @@ class SignupViewController: UIViewController, StoryboardInitializable {
     
     //Clear text fields data and image
     private func clearData() {
-        imgvProfilePic.image = nil
+        //imgvProfilePic.image = nil
         txfName.text = ""
         txfEmail.text = ""
         txfPassword.text = ""
@@ -50,15 +50,11 @@ class SignupViewController: UIViewController, StoryboardInitializable {
 
 }
 
+// MARK: - Binding
+
 extension SignupViewController {
     private func setupBindings() {
 
-        // View Model outputs to the View Controller
-        
-//        if let imageData = imgvProfilePic.image?.pngData() {
-//
-//        }
-//
         txfName.rx.text
             .map{$0 ?? ""}
             .bind(to: viewModel.name)
@@ -73,6 +69,7 @@ extension SignupViewController {
             .map{$0 ?? ""}
             .bind(to: viewModel.password)
             .disposed(by: disposeBag)
+        
         txfDob.rx.text
             .map{$0 ?? ""}
             .bind(to: viewModel.dob)
@@ -88,11 +85,7 @@ extension SignupViewController {
             })
             .disposed(by: disposeBag)
 
-        viewModel.isValidUser()
-            .bind(to: btnSignup.rx.isEnabled)
-            .disposed(by: disposeBag)
-        
-        viewModel.isValidUser()
+        viewModel.isValidUserInfo()
             .map {$0 ? 1 : 0.4}
             .bind(to: btnSignup.rx.alpha)
             .disposed(by: disposeBag)

@@ -10,6 +10,14 @@
 		0BC7CE1126ED0799000B52B2 /* UserValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE1026ED0799000B52B2 /* UserValidationService.swift */; };
 		0BC7CE1326ED19BD000B52B2 /* UserValidationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE1226ED19BD000B52B2 /* UserValidationProtocol.swift */; };
 		0BC7CE1626ED2541000B52B2 /* SignupProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE1526ED2541000B52B2 /* SignupProtocol.swift */; };
+		0BC7CE1926ED3367000B52B2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE1826ED3367000B52B2 /* CoreDataManager.swift */; };
+		0BC7CE2126ED3D8B000B52B2 /* UserDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE2026ED3D8B000B52B2 /* UserDatabaseService.swift */; };
+		0BC7CE2226ED3D8B000B52B2 /* UserDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE2026ED3D8B000B52B2 /* UserDatabaseService.swift */; };
+		0BC7CE2426ED4394000B52B2 /* UserDatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE2326ED4394000B52B2 /* UserDatabaseProtocol.swift */; };
+		0BC7CE2526ED4394000B52B2 /* UserDatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE2326ED4394000B52B2 /* UserDatabaseProtocol.swift */; };
+		0BC7CE2926ED59D6000B52B2 /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE2826ED59D6000B52B2 /* LoginProtocol.swift */; };
+		0BC7CE2B26ED5B50000B52B2 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE2A26ED5B50000B52B2 /* LoginService.swift */; };
+		0BC7CE2D26ED5C44000B52B2 /* EmailPasswordValidationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE2C26ED5C44000B52B2 /* EmailPasswordValidationProtocol.swift */; };
 		0BEE8DF926EB238300E2450A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEE8DF826EB238300E2450A /* AppDelegate.swift */; };
 		0BEE8DFB26EB238300E2450A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEE8DFA26EB238300E2450A /* SceneDelegate.swift */; };
 		0BEE8DFD26EB238300E2450A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEE8DFC26EB238300E2450A /* SignupViewController.swift */; };
@@ -65,6 +73,12 @@
 		0BC7CE1026ED0799000B52B2 /* UserValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserValidationService.swift; sourceTree = "<group>"; };
 		0BC7CE1226ED19BD000B52B2 /* UserValidationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserValidationProtocol.swift; sourceTree = "<group>"; };
 		0BC7CE1526ED2541000B52B2 /* SignupProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupProtocol.swift; sourceTree = "<group>"; };
+		0BC7CE1826ED3367000B52B2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0BC7CE2026ED3D8B000B52B2 /* UserDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabaseService.swift; sourceTree = "<group>"; };
+		0BC7CE2326ED4394000B52B2 /* UserDatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabaseProtocol.swift; sourceTree = "<group>"; };
+		0BC7CE2826ED59D6000B52B2 /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
+		0BC7CE2A26ED5B50000B52B2 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		0BC7CE2C26ED5C44000B52B2 /* EmailPasswordValidationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordValidationProtocol.swift; sourceTree = "<group>"; };
 		0BEE8DF526EB238300E2450A /* WeatherInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BEE8DF826EB238300E2450A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BEE8DFA26EB238300E2450A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +155,7 @@
 			children = (
 				0BC7CE1226ED19BD000B52B2 /* UserValidationProtocol.swift */,
 				0BC7CE1526ED2541000B52B2 /* SignupProtocol.swift */,
+				0BC7CE2326ED4394000B52B2 /* UserDatabaseProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -149,6 +164,32 @@
 			isa = PBXGroup;
 			children = (
 				0BC7CE1026ED0799000B52B2 /* UserValidationService.swift */,
+				0BC7CE2026ED3D8B000B52B2 /* UserDatabaseService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0BC7CE1726ED332C000B52B2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0BC7CE1826ED3367000B52B2 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		0BC7CE2626ED599B000B52B2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0BC7CE2826ED59D6000B52B2 /* LoginProtocol.swift */,
+				0BC7CE2C26ED5C44000B52B2 /* EmailPasswordValidationProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0BC7CE2726ED59A9000B52B2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0BC7CE2A26ED5B50000B52B2 /* LoginService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -179,6 +220,7 @@
 		0BEE8DF726EB238300E2450A /* WeatherInfo */ = {
 			isa = PBXGroup;
 			children = (
+				0BC7CE1726ED332C000B52B2 /* CoreData */,
 				0BEE8E2D26EB245100E2450A /* App */,
 				0BEE8E7426EBABB200E2450A /* Common */,
 				0BEE8E2B26EB23D900E2450A /* Library */,
@@ -295,6 +337,8 @@
 		0BEE8E3D26EB3A5000E2450A /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				0BC7CE2726ED59A9000B52B2 /* Services */,
+				0BC7CE2626ED599B000B52B2 /* Protocols */,
 				0BEE8E7726EBAFCF00E2450A /* Coordinators */,
 				0BEE8E5026EB3D6000E2450A /* Models */,
 				0BEE8E4F26EB3D5800E2450A /* Views */,
@@ -790,11 +834,15 @@
 			files = (
 				0BEE8E5226EB3DD200E2450A /* SignupViewModel.swift in Sources */,
 				0BEE8E7626EBABC600E2450A /* Constants.swift in Sources */,
+				0BC7CE2B26ED5B50000B52B2 /* LoginService.swift in Sources */,
 				0BEE8E3526EB32B800E2450A /* LoginViewController.swift in Sources */,
+				0BC7CE2126ED3D8B000B52B2 /* UserDatabaseService.swift in Sources */,
 				0BEE8E5B26EB7ED400E2450A /* TabBarViewController.swift in Sources */,
+				0BC7CE2D26ED5C44000B52B2 /* EmailPasswordValidationProtocol.swift in Sources */,
 				0BEE8E6D26EB840600E2450A /* WeatherViewModel.swift in Sources */,
 				0BEE8E7326EB84FB00E2450A /* LoginViewModel.swift in Sources */,
 				0BEE8E7926EBB00C00E2450A /* LoginCoordinator.swift in Sources */,
+				0BC7CE2426ED4394000B52B2 /* UserDatabaseProtocol.swift in Sources */,
 				0BEE8E3326EB2B2900E2450A /* AppCoordinator.swift in Sources */,
 				0BEE8E7F26EC742300E2450A /* ProfileCoordinator.swift in Sources */,
 				0BEE8E6926EB820200E2450A /* WeatherViewController.swift in Sources */,
@@ -803,9 +851,11 @@
 				0BEE8E0326EB238300E2450A /* WeatherInfo.xcdatamodeld in Sources */,
 				0BEE8E5F26EB7FC900E2450A /* ProfileViewController.swift in Sources */,
 				0BEE8E6F26EB842800E2450A /* ProfileViewModel.swift in Sources */,
+				0BC7CE2926ED59D6000B52B2 /* LoginProtocol.swift in Sources */,
 				0BC7CE1126ED0799000B52B2 /* UserValidationService.swift in Sources */,
 				0BEE8DFD26EB238300E2450A /* SignupViewController.swift in Sources */,
 				0BC7CE1326ED19BD000B52B2 /* UserValidationProtocol.swift in Sources */,
+				0BC7CE1926ED3367000B52B2 /* CoreDataManager.swift in Sources */,
 				0BEE8E5526EB3F7000E2450A /* StoryboardInitializable.swift in Sources */,
 				0BEE8DF926EB238300E2450A /* AppDelegate.swift in Sources */,
 				0BEE8E3926EB35A500E2450A /* SignupCoordinator.swift in Sources */,
@@ -819,8 +869,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BC7CE2226ED3D8B000B52B2 /* UserDatabaseService.swift in Sources */,
 				0BEE8E1326EB238600E2450A /* WeatherInfoTests.swift in Sources */,
 				0BEE8E5326EB3DD200E2450A /* SignupViewModel.swift in Sources */,
+				0BC7CE2526ED4394000B52B2 /* UserDatabaseProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

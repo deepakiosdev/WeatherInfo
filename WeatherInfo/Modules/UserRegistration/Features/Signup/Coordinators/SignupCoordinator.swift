@@ -17,7 +17,9 @@ class SignupCoordinator: BaseCoordinator<Void> {
     }
 
     override func start() -> Observable<Void> {
-        let viewModel = SignupViewModel()
+        let coreDataManager = CoreDataManager()
+        let userDatabaseService = UserDatabaseService(managedObjectContext: coreDataManager.mainContext, coreDataStack: coreDataManager)
+        let viewModel = SignupViewModel(userDatabaseService: userDatabaseService)
         let viewController = SignupViewController.initFromStoryboard()
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.setNavigationBarHidden(true, animated: true)
