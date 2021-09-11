@@ -21,4 +21,4 @@
 4. Save user's data in code data
 
 ##TODO
-
+1. Test lower version of iOS 14.5. I have only simutaor and device with iOS 14.5 and iOS 15 beta 7 so tested on these devices.

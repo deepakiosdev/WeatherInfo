@@ -7,23 +7,44 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+enum TabBarItems: Int, CaseIterable {
+    case profile
+    case weather
+    
+    var title: String? {
+        switch self {
+        case .profile:
+            return "Profile"
+            
+        case .weather:
+            return "Weather"
+        }
+    }
+    
+    var icon: UIImage? {
+        switch self {
+        case .profile:
+            return UIImage(systemName: "person")
+        case .weather:
+            return UIImage(systemName: "cloud")
+        }
+    }
+    
+    var navigationController: UINavigationController {
+        let navigation = UINavigationController()
+        navigation.tabBarItem.title = self.title
+        navigation.tabBarItem.image = self.icon
+        navigation.setNavigationBarHidden(true, animated: true)
+
+        return navigation
+    }
+}
+
+class TabBarViewController: UITabBarController, StoryboardInitializable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

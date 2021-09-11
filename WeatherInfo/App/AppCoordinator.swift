@@ -18,7 +18,7 @@ class AppCoordinator: BaseCoordinator<Void> {
     }
     
     override func start() -> Observable<CoordinationResult> {
-        let registrationCoordinator = UserRegistrationCoordinator(window: window)
+        let registrationCoordinator = SignupCoordinator(window: window)
         return self.coordinate(to: registrationCoordinator)
     }
 }

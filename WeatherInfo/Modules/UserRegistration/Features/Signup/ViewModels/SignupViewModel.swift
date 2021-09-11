@@ -6,7 +6,15 @@
 //
 
 import Foundation
+import RxSwift
 
 class SignupViewModel {
+    private let disposeBag = DisposeBag()
+
+    let showLogin: PublishSubject<Void> = PublishSubject<Void>()
     
+    
+    init() {
+    }
+
 }

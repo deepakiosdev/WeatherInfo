@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "262EA73D-0A35-461B-8166-76DD93C06C00"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5695CBCF-5BD2-4235-BABF-74A8B49BCB84"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherInfo/Modules/Weather/Features/TabBar/Coordinators/TabBarCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "moveToLoginScreen()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8410CFE6-6B0E-4391-81DE-D621116EA76C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherInfo/Library/BaseCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "coordinate(to:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8410CFE6-6B0E-4391-81DE-D621116EA76C - d93930b836e32b1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherInfo.BaseCoordinator.coordinate&lt;&#x3c4;_0_0&gt;(to: WeatherInfo.BaseCoordinator&lt;&#x3c4;_1_0&gt;) -&gt; RxSwift.Observable&lt;&#x3c4;_1_0&gt;"
+                  moduleName = "WeatherInfo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dipakpandey/Desktop/WeatherInfo/WeatherInfo/Library/BaseCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "162">
+               </Location>
+               <Location
+                  uuid = "8410CFE6-6B0E-4391-81DE-D621116EA76C - 2cf5ff6fca1b339f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (&#x3c4;_1_0) -&gt; () in WeatherInfo.BaseCoordinator.coordinate&lt;&#x3c4;_0_0&gt;(to: WeatherInfo.BaseCoordinator&lt;&#x3c4;_1_0&gt;) -&gt; RxSwift.Observable&lt;&#x3c4;_1_0&gt;"
+                  moduleName = "WeatherInfo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dipakpandey/Desktop/WeatherInfo/WeatherInfo/Library/BaseCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "111">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "186071CE-B27E-47CD-A852-B01F49EFDFE5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherInfo/Library/BaseCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "free(coordinator:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA4E2860-DC35-45E5-9CD1-37973318D0E8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherInfo/Modules/Weather/Features/WeatherInfo/ViewControllers/WeatherViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

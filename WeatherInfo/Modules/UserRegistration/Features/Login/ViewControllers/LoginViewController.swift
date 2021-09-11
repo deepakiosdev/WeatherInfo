@@ -6,13 +6,37 @@
 //
 
 import UIKit
+import RxSwift
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, StoryboardInitializable {
+    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var btnSignup: UIButton!
+    
+    var viewModel: LoginViewModel!
+    private let disposeBag = DisposeBag()
 
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+        setupBindings()
+    }
 
-        // Do any additional setup after loading the view.
+  
+    private func setupUI() {
+    }
+
+    private func setupBindings() {
+
+        // View Model outputs to the View Controller
+        btnLogin.rx.tap
+            .bind(to: viewModel.showHomeScreen)
+            .disposed(by: disposeBag)
+
+        btnSignup.rx.tap
+            .bind(to: viewModel.showSignup)
+            .disposed(by: disposeBag)
+
     }
     
 
