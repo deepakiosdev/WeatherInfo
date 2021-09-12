@@ -10,10 +10,7 @@ enum Constants {
     enum Api {
         static let scheme = "https"
         static let host = "api.openweathermap.org"
-        static let accessKey = ""
-    }
-
-    enum WeatherList {
+        static let accessKey = "bdf473f4dc3bfd23ac56e498989bf88c"
     }
     
     enum Storyboard {

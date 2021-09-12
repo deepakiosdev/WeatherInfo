@@ -6,25 +6,51 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol WeatherViewModelProtocol {
     func fetchLocation()
-    //func fetchWetherDetail(for location: CLLocation)
+    func fetchWetherDetail(for location: Location)
 }
 
 final class WeatherViewModel: WeatherViewModelProtocol {
     
     private let locationService: LocationServiceProtocol!
-    
-     init(locationService: LocationServiceProtocol = LocationService()) {
+    private let weatherForecastService: WeatherForecastNetworkServiceProtocol!
+    private let disposeBag = DisposeBag()
+
+    init(locationService: LocationServiceProtocol = LocationService(), weatherForecastService: WeatherForecastNetworkServiceProtocol) {
         self.locationService = locationService
+        self.weatherForecastService = weatherForecastService
         fetchLocation()
     }
    
     func fetchLocation() {
-        locationService.getCurrentLocation() { (location, error) in
-            print("Location:\(String(describing: location))")
-            print("Location error:\(String(describing: error))")
+        locationService.getCurrentLocation() { [weak self] (location, error) in            
+            guard let location = location else {
+                return
+            }
+            
+            self?.fetchWetherDetail(for: location)
+
+        }
+    }
+    
+    func fetchWetherDetail(for location: Location) {
+        
+        do{
+            try weatherForecastService.fetchWeatherForecast(for: location).subscribe(
+                onNext: { weatherForcast in
+                    print(weatherForcast.cityName)
+                },
+                onError: { error in
+                    print(error.localizedDescription)
+                },
+                onCompleted: {
+                    print("Completed event.")
+                }).disposed(by: disposeBag)
+        }
+        catch {
         }
     }
 }

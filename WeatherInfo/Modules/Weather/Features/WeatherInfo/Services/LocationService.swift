@@ -10,7 +10,7 @@ import CoreLocation
 
 
 protocol LocationServiceProtocol {
-    typealias locationCompletionHandler = (CLLocation?, Error?) -> Void
+    typealias locationCompletionHandler = (Location?, WAError?) -> Void
     func getCurrentLocation(completionHandler: @escaping locationCompletionHandler)
 }
 
@@ -30,7 +30,7 @@ final class LocationService: NSObject, LocationServiceProtocol {
         locationManager.requestLocation()
     }
     
-    func getCurrentLocation(completionHandler: @escaping (CLLocation?, Error?) -> Void) {
+    func getCurrentLocation(completionHandler: @escaping (Location?, WAError?) -> Void) {
         locationHandler = completionHandler
         requestLocation()
      }
@@ -42,12 +42,12 @@ extension LocationService : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             print("Current location: \(location)")
-            locationHandler?(location, nil)
+            locationHandler?(Location.init(location: location), nil)
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Error finding location: \(error.localizedDescription)")
-        locationHandler?(nil, error)
+        print("Error in location finding: \(error.localizedDescription)")
+        locationHandler?(nil, WAError.unableToFindLocation)
     }
 }

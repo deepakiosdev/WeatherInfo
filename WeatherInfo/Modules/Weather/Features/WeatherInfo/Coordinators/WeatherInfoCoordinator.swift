@@ -17,7 +17,9 @@ final class WeatherInfoCoordinator: BaseCoordinator<Void> {
     }
     
     override func start() -> Observable<Void> {
-        let viewModel = WeatherViewModel()
+        let networkManager = NetworkManager()
+        let service = WeatherForecastService(networkManager: networkManager)
+        let viewModel = WeatherViewModel(weatherForecastService: service)
         let viewController = WeatherViewController.initFromStoryboard()
         viewController.viewModel = viewModel
         navigationController.setViewControllers([viewController], animated: true)
