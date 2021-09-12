@@ -8,7 +8,7 @@
 import RxSwift
 import RxCocoa
 
-class LoginViewModel {
+final class LoginViewModel {
     private let disposeBag = DisposeBag()
     private let loginService: LoginProtocol!
 
@@ -16,7 +16,7 @@ class LoginViewModel {
     let password: BehaviorRelay<String> = BehaviorRelay.init(value: "")
 
     let showSignup: PublishSubject<Void> = PublishSubject<Void>()
-    let showHomeScreen: PublishSubject<Bool> = PublishSubject<Bool>()
+    let showHomeScreen: PublishSubject<User> = PublishSubject<User>()
 
     init(loginService: LoginProtocol) {
         self.loginService = loginService
@@ -30,8 +30,8 @@ class LoginViewModel {
 
     func login() {
         
-        if loginService.isValidCredential(email.value, password: password.value) {
-            showHomeScreen.onNext(true)
+        if loginService.isValidCredential(email.value, password: password.value), let user = loginService.login(withEmail: email.value, andPassword: password.value) {
+            showHomeScreen.onNext(user)
         }
     }
         

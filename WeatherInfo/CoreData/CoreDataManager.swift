@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class CoreDataManager {
+final class CoreDataManager {
     static let modelName = "WeatherInfo"
     
     static let model: NSManagedObjectModel = {

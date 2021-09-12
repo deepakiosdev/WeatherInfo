@@ -36,7 +36,7 @@ struct UserValidationService: UserValidationProtocol {
         }
         
         if !isValidPassword(user.password ?? "") {
-            showAlertWithMessage("Password should be more than 6 character")
+            showAlertWithMessage("Password should be more than 5 character")
             return false
         }
         

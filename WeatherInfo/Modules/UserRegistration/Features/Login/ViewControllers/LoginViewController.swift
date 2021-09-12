@@ -18,13 +18,32 @@ class LoginViewController: UIViewController, StoryboardInitializable {
     var viewModel: LoginViewModel!
     private let disposeBag = DisposeBag()
 
-   
+    // MARK: - Life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
     }
-
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        clearData()
+        hideKeyboard()
+        super.viewDidDisappear(animated)
+    }
 }
+
+// MARK: - Private methods
+extension LoginViewController {
+    //Clear text field's data
+    private func clearData() {
+        txfEmail.text = ""
+        txfPassword.text = ""
+    }
+    
+    private func hideKeyboard() {
+        self.view.endEditing(true)
+    }
+}
+
 
 // MARK: - Binding
 

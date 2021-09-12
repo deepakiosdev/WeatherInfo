@@ -37,8 +37,12 @@ extension LoginService {
         return false
     }
     
-    func login() {
-        
+    func login(withEmail email: String, andPassword password: String) -> User? {
+        guard let user = getUser(), email == user.email && password == user.password else {
+            showAlertWithMessage("Login falied.")
+            return nil
+        }
+        return user
     }
     
    private func getUser() -> User? {

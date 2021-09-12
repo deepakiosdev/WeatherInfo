@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class SignupCoordinator: BaseCoordinator<Void> {
+final class SignupCoordinator: BaseCoordinator<Void> {
     private let window: UIWindow
 
     init(window: UIWindow) {

@@ -8,13 +8,13 @@
 import UIKit
 import RxSwift
 
-class LoginCoordinator: BaseCoordinator<Void> {
+final class LoginCoordinator: BaseCoordinator<Void> {
     private let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-
+    
     override func start() -> Observable<Void> {
         let coreDataManager = CoreDataManager()
         let loginService = LoginService.init(managedObjectContext: coreDataManager.mainContext, coreDataStack: coreDataManager)
@@ -26,16 +26,15 @@ class LoginCoordinator: BaseCoordinator<Void> {
         viewModel.showSignup
             .subscribe(onNext:
                         { [weak self] in
-                self?.showSignupScreen()
-            })
+                            self?.showSignupScreen()
+                        })
             .disposed(by: disposeBag)
         
         viewModel.showHomeScreen
-            .debug()
             .subscribe(onNext:
-                        { [weak self] _ in
-                self?.showTabBarScreen()
-            })
+                        { [weak self] user in
+                            self?.showTabBarScreen(for: user)
+                        })
             .disposed(by: disposeBag)
         
         return Observable.never()
@@ -44,9 +43,9 @@ class LoginCoordinator: BaseCoordinator<Void> {
     private func showSignupScreen() {
         navigationController.popViewController(animated: true)
     }
-
-    private func showTabBarScreen() {
-        let tabBarCoordinator = TabBarCoordinator.init(navigationController: navigationController)
+    
+    private func showTabBarScreen(for user: User) {
+        let tabBarCoordinator = TabBarCoordinator.init(user: user, navigationController: navigationController)
         coordinate(to: tabBarCoordinator)
             .subscribe()
             .disposed(by: disposeBag)

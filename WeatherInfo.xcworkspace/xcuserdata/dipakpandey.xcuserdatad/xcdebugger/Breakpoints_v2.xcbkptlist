@@ -14,8 +14,8 @@
             filePath = "WeatherInfo/Modules/Weather/Features/TabBar/Coordinators/TabBarCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "moveToLoginScreen()"
             landmarkType = "7">
          </BreakpointContent>
@@ -81,22 +81,6 @@
             startingLineNumber = "37"
             endingLineNumber = "37"
             landmarkName = "free(coordinator:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CA4E2860-DC35-45E5-9CD1-37973318D0E8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherInfo/Modules/Weather/Features/WeatherInfo/ViewControllers/WeatherViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

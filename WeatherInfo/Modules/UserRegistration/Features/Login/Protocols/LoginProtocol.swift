@@ -9,5 +9,5 @@ import Foundation
 
 protocol LoginProtocol: EmailPasswordValidationProtocol {
     func isValidCredential(_ email: String, password: String) -> Bool
-    func login()
+    func login(withEmail email: String, andPassword password: String) -> User?
 }

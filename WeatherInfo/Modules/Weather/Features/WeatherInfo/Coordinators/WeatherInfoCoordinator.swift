@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class WeatherInfoCoordinator: BaseCoordinator<Void> {
+final class WeatherInfoCoordinator: BaseCoordinator<Void> {
     
     private let navigationController: UINavigationController
     

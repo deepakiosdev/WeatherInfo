@@ -9,18 +9,19 @@
 import UIKit
 import RxSwift
 
-class ProfileCoordinator: BaseCoordinator<Void> {
-    var isLogout = PublishSubject<Bool>()
-    
+final class ProfileCoordinator: BaseCoordinator<Void> {
     private let navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController) {
+    private let user: User
+    var isLogout = PublishSubject<Bool>()
+
+    init(user: User, navigationController: UINavigationController) {
+        self.user = user
         self.navigationController = navigationController
     }
     
     override func start() -> Observable<Void> {
         let viewController = ProfileViewController.initFromStoryboard()
-        let viewModel = ProfileViewModel()
+        let viewModel = ProfileViewModel(user: user)
         viewController.viewModel = viewModel
         navigationController.setViewControllers([viewController], animated: true)
                 

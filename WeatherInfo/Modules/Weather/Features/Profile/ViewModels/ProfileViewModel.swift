@@ -7,12 +7,12 @@
 
 import RxSwift
 
-class ProfileViewModel {
+final class ProfileViewModel {
     private let disposeBag = DisposeBag()
-
+    let user: User
     let showLoginScreen: PublishSubject<Void> = PublishSubject<Void>()
 
-    init() {
-        
+    init(user: User) {
+        self.user = user
     }
 }

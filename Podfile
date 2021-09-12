@@ -8,6 +8,7 @@ target 'WeatherInfo' do
   # Pods for WeatherInfo
 	pod 'RxSwift'
 	pod 'RxCocoa'
+  pod 'RxGesture'
   pod 'IQKeyboardManagerSwift'
 
   target 'WeatherInfoTests' do

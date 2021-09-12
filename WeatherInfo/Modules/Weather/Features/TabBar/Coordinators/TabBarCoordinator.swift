@@ -10,13 +10,15 @@ import RxSwift
 import UIKit
 
 
-class TabBarCoordinator: BaseCoordinator<Void> {
+final class TabBarCoordinator: BaseCoordinator<Void> {
     
     private let navigationController: UINavigationController
+    private let user: User
     private var viewControllers: [UINavigationController]
     private var tabBarVC: TabBarViewController!
     
-    init(navigationController: UINavigationController) {
+    init(user: User, navigationController: UINavigationController) {
+        self.user = user
         self.navigationController = navigationController
         
         self.viewControllers = TabBarItems.allCases
@@ -38,7 +40,7 @@ class TabBarCoordinator: BaseCoordinator<Void> {
                 
                 switch tabBarItem {
                 case .profile:
-                    let profileCoordinater = ProfileCoordinator(navigationController: controller)
+                    let profileCoordinater = ProfileCoordinator.init(user: user, navigationController: controller)
                                        
                     profileCoordinater.isLogout
                         .subscribe(onNext:

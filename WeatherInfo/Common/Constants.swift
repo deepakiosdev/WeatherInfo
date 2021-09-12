@@ -20,7 +20,11 @@ enum Constants {
         static let main = "Main"
     }
     
-    enum Images {
+    enum Image {
+        static let tabbarIconWeather = "cloud"
+        static let tabbarIconProfile = "person"
+        static let eye = "eye"
+        static let eyeSlash = "eye.slash"
     }
     
     

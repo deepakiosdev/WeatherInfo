@@ -21,23 +21,24 @@ class SignupViewController: UIViewController, StoryboardInitializable {
     var viewModel: SignupViewModel!
     private let disposeBag = DisposeBag()
 
+    // MARK: - Life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        saveProfilePic()
         setupBindings()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         clearData()
-        self.view.endEditing(true)
+        hideKeyboard()
         super.viewDidDisappear(animated)
     }
     
-    private func setupUI() {
-        
-    }
-    
-    //Clear text fields data and image
+}
+
+// MARK: - Private methods
+extension SignupViewController {
+    //Clear text field's data and image
     private func clearData() {
         //imgvProfilePic.image = nil
         txfName.text = ""
@@ -47,7 +48,13 @@ class SignupViewController: UIViewController, StoryboardInitializable {
         txfGender.text = ""
     }
     
-
+    private func saveProfilePic() {
+        viewModel.profilePic = imgvProfilePic.image?.pngData()
+    }
+    
+    private func hideKeyboard() {
+        self.view.endEditing(true)
+    }
 }
 
 // MARK: - Binding

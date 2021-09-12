@@ -24,9 +24,9 @@ enum TabBarItems: Int, CaseIterable {
     var icon: UIImage? {
         switch self {
         case .profile:
-            return UIImage(systemName: "person")
+            return UIImage(systemName: Constants.Image.tabbarIconProfile)
         case .weather:
-            return UIImage(systemName: "cloud")
+            return UIImage(systemName: Constants.Image.tabbarIconWeather)
         }
     }
     

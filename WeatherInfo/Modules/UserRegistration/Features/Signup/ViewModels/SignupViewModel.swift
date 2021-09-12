@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 
-class SignupViewModel: SignupProtocol {
+final class SignupViewModel: SignupProtocol {
 
     private let disposeBag = DisposeBag()
     private let userValidationService: UserValidationProtocol!
@@ -21,8 +21,8 @@ class SignupViewModel: SignupProtocol {
     let password: BehaviorRelay<String> = BehaviorRelay.init(value: "")
     let dob: BehaviorRelay<String> = BehaviorRelay.init(value: "")
     let gender: BehaviorRelay<String> = BehaviorRelay.init(value: "")
-    let profilePic: BehaviorRelay<Data> = BehaviorRelay.init(value: Data())
-
+    var profilePic: Data?
+    
     let showLogin: PublishSubject<Bool> = PublishSubject<Bool>()
 
     init(userValidationService: UserValidationProtocol = UserValidationService(), userDatabaseService: UserDatabaseProtocol) {
@@ -44,7 +44,7 @@ class SignupViewModel: SignupProtocol {
  
     func signup() {
         
-        let user = userDatabaseService.initUser(profilePic.value, name: name.value, email: email.value, password: password.value, dob: dob.value, gender: gender.value)
+        let user = userDatabaseService.initUser(profilePic, name: name.value, email: email.value, password: password.value, dob: dob.value, gender: gender.value)
 
         if userValidationService.isValidUser(user) {
             saveUserInDB(user)
