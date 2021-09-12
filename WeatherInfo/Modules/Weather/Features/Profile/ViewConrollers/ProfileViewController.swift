@@ -20,7 +20,7 @@ final class ProfileViewController: UIViewController, StoryboardInitializable {
     @IBOutlet weak var txfGender: UITextField!
     @IBOutlet weak var btnLogout: UIButton!
     
-    var viewModel :ProfileViewModel!
+    var viewModel: ProfileViewModel!
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {

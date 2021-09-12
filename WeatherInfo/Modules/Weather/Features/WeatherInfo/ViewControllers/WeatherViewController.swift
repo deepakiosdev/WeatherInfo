@@ -9,6 +9,8 @@ import UIKit
 
 class WeatherViewController: UIViewController, StoryboardInitializable {
 
+    var viewModel: WeatherViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

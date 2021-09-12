@@ -18,6 +18,7 @@
 		0BC7CE2926ED59D6000B52B2 /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE2826ED59D6000B52B2 /* LoginProtocol.swift */; };
 		0BC7CE2B26ED5B50000B52B2 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE2A26ED5B50000B52B2 /* LoginService.swift */; };
 		0BC7CE2D26ED5C44000B52B2 /* EmailPasswordValidationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE2C26ED5C44000B52B2 /* EmailPasswordValidationProtocol.swift */; };
+		0BC7CE3226EDFE8F000B52B2 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7CE3126EDFE8F000B52B2 /* LocationService.swift */; };
 		0BEE8DF926EB238300E2450A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEE8DF826EB238300E2450A /* AppDelegate.swift */; };
 		0BEE8DFB26EB238300E2450A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEE8DFA26EB238300E2450A /* SceneDelegate.swift */; };
 		0BEE8DFD26EB238300E2450A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEE8DFC26EB238300E2450A /* SignupViewController.swift */; };
@@ -79,6 +80,7 @@
 		0BC7CE2826ED59D6000B52B2 /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
 		0BC7CE2A26ED5B50000B52B2 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		0BC7CE2C26ED5C44000B52B2 /* EmailPasswordValidationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordValidationProtocol.swift; sourceTree = "<group>"; };
+		0BC7CE3126EDFE8F000B52B2 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		0BEE8DF526EB238300E2450A /* WeatherInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BEE8DF826EB238300E2450A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BEE8DFA26EB238300E2450A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		0BC7CE3026EDFE3E000B52B2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0BC7CE3126EDFE8F000B52B2 /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		0BEE8DEC26EB238300E2450A = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +233,7 @@
 				0BC7CE1726ED332C000B52B2 /* CoreData */,
 				0BEE8E2D26EB245100E2450A /* App */,
 				0BEE8E7426EBABB200E2450A /* Common */,
-				0BEE8E2B26EB23D900E2450A /* Library */,
+				0BEE8E2B26EB23D900E2450A /* ThirdPartyLibrary */,
 				0BEE8E2C26EB240F00E2450A /* Modules */,
 				0BEE8DFE26EB238300E2450A /* Main.storyboard */,
 				0BEE8E0426EB238500E2450A /* Assets.xcassets */,
@@ -251,13 +261,13 @@
 			path = WeatherInfoUITests;
 			sourceTree = "<group>";
 		};
-		0BEE8E2B26EB23D900E2450A /* Library */ = {
+		0BEE8E2B26EB23D900E2450A /* ThirdPartyLibrary */ = {
 			isa = PBXGroup;
 			children = (
 				0BEE8E5426EB3F7000E2450A /* StoryboardInitializable.swift */,
 				0BEE8E3026EB24FB00E2450A /* BaseCoordinator.swift */,
 			);
-			path = Library;
+			path = ThirdPartyLibrary;
 			sourceTree = "<group>";
 		};
 		0BEE8E2C26EB240F00E2450A /* Modules */ = {
@@ -425,6 +435,7 @@
 		0BEE8E5826EB43D300E2450A /* WeatherInfo */ = {
 			isa = PBXGroup;
 			children = (
+				0BC7CE3026EDFE3E000B52B2 /* Services */,
 				0BEE8E7C26EC73D700E2450A /* Coordinators */,
 				0BEE8E6726EB816B00E2450A /* ViewModels */,
 				0BEE8E6626EB815F00E2450A /* Models */,
@@ -862,6 +873,7 @@
 				0BEE8E8126EC74E900E2450A /* WeatherInfoCoordinator.swift in Sources */,
 				0BEE8DFB26EB238300E2450A /* SceneDelegate.swift in Sources */,
 				0BC7CE1626ED2541000B52B2 /* SignupProtocol.swift in Sources */,
+				0BC7CE3226EDFE8F000B52B2 /* LocationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

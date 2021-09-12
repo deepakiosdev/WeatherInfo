@@ -7,6 +7,25 @@
 
 import Foundation
 
-final class WeatherViewModel {
-    
+protocol WeatherViewModelProtocol {
+    func fetchLocation()
+    //func fetchWetherDetail(for location: CLLocation)
 }
+
+final class WeatherViewModel: WeatherViewModelProtocol {
+    
+    private let locationService: LocationServiceProtocol!
+    
+     init(locationService: LocationServiceProtocol = LocationService()) {
+        self.locationService = locationService
+        fetchLocation()
+    }
+   
+    func fetchLocation() {
+        locationService.getCurrentLocation() { (location, error) in
+            print("Location:\(String(describing: location))")
+            print("Location error:\(String(describing: error))")
+        }
+    }
+}
+
