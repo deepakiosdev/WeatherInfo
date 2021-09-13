@@ -51,4 +51,14 @@ final class SignupViewModel: SignupProtocol {
         }
     
     }
+    
+    func clearUserInputs() {
+        profilePic = nil
+        name.accept("")
+        email.accept("")
+        password.accept("")
+        dob.accept("")
+        gender.accept("")
+    }
+    
 }

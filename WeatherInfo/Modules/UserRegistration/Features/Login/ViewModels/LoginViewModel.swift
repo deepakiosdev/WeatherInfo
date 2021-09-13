@@ -34,5 +34,11 @@ final class LoginViewModel {
             showHomeScreen.onNext(user)
         }
     }
+    
+    func clearUserInputs() {
+        email.accept("")
+        password.accept("")
+    }
+
         
 }

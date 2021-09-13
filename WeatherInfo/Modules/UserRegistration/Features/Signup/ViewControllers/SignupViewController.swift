@@ -35,10 +35,10 @@ class SignupViewController: UIViewController, StoryboardInitializable {
         super.viewDidAppear(animated)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         clearData()
         hideKeyboard()
-        super.viewDidDisappear(animated)
+        super.viewWillDisappear(animated)
     }
  
 }
@@ -54,6 +54,7 @@ extension SignupViewController {
         txfPassword.text = ""
         txfDob.text = ""
         txfGender.text = ""
+        viewModel.clearUserInputs()
     }
     
     private func saveProfilePic() {
@@ -88,16 +89,19 @@ extension SignupViewController {
             .disposed(by: disposeBag)
 
         txfPassword.rx.text
+            .debug()
             .map{$0 ?? ""}
             .bind(to: viewModel.password)
             .disposed(by: disposeBag)
         
         txfDob.rx.text
+            .debug()
             .map{$0 ?? ""}
             .bind(to: viewModel.dob)
             .disposed(by: disposeBag)
         
         txfGender.rx.text
+            .debug()
             .map{$0 ?? ""}
             .bind(to: viewModel.gender)
             .disposed(by: disposeBag)
@@ -133,7 +137,7 @@ extension SignupViewController {
     }
     
     @objc func tapDatePickerDone() {
-        //TODO: Add validation so that user can not select previous dates
+
         if let datePicker = self.txfDob.inputView as? UIDatePicker {
             let dateformatter = DateFormatter()
             dateformatter.dateStyle = .medium

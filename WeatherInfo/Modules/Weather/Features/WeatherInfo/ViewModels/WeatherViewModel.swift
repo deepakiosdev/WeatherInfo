@@ -31,9 +31,7 @@ final class WeatherViewModel: WeatherViewModelProtocol {
     let minTemp: BehaviorRelay<String> = BehaviorRelay.init(value: "")
     let humdity: BehaviorRelay<String> = BehaviorRelay.init(value: "")
     let windSpeed: BehaviorRelay<String> = BehaviorRelay.init(value: "")
-    //var forecasts: BehaviorRelay<[ForecastCellViewModel]>!
     let forecasts: BehaviorRelay<[ForecastCellViewModel]> = BehaviorRelay<[ForecastCellViewModel]>.init(value: [ForecastCellViewModel]())
-   // var forecasts: BehaviorRelay<[ForecastCellViewModel]>?
 
     
     init(locationService: LocationServiceProtocol = LocationService(), weatherForecastService: WeatherForecastNetworkServiceProtocol) {
@@ -48,9 +46,7 @@ final class WeatherViewModel: WeatherViewModelProtocol {
             guard let location = location else {
                 return
             }
-            
             self?.fetchWetherDetail(for: location)
-
         }
     }
     
@@ -108,19 +104,8 @@ extension WeatherViewModel {
     
     private func handleError(_ error: WAError) {
         hasError.accept(true)
-        switch error {
-        case .invalidURL, .requestParameterError:
-            processMessage.accept("The weather service is not working.")
-        case .networkRequestFailed, .noData:
-            processMessage.accept("The network appears to be down.")
-        case .jsonParsingFailed:
-            processMessage.accept("We're having trouble parsing weather data.")
-        case .unableToFindLocation:
-            processMessage.accept("We're having trouble getting user location.")
-        case .unknown(let errorMsg):
-            processMessage.accept(errorMsg)
-        }
-        
+        processMessage.accept(error.description)
+
         location.accept("")
         temperature.accept("")
         weatherDescription.accept("")

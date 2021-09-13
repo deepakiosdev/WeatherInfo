@@ -16,7 +16,9 @@ protocol EmailPasswordValidationProtocol {
 extension EmailPasswordValidationProtocol {
     
     func isValidEmail(_ email: String) -> Bool {
-        return email.count > 8 && email.contains("@") && email.contains(".")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        return predicate.evaluate(with: email)
     }
     
     func isValidPassword(_ password: String) -> Bool {

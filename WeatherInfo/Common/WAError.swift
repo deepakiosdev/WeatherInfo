@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum WAError: Error {
+enum WAError: Error, CustomStringConvertible {
     
     //Web Service errors
     case invalidURL
@@ -25,8 +25,8 @@ enum WAError: Error {
     case unknown(String)
     
     
-    var errorDescription: String {
-        
+    var description: String {
+    
         switch self {
             
         case .invalidURL:
@@ -39,13 +39,13 @@ enum WAError: Error {
             return "Record not available"
             
         case .networkRequestFailed:
-            return "Api failed"
+            return "The network appears to be down."
             
         case .jsonParsingFailed:
-            return "Json Parsing Failed"
+            return "We're having trouble parsing weather data."
             
         case .unableToFindLocation:
-            return "Unable To Find Location"
+            return "We're having trouble getting user location."
             
         case .unknown (let errorDesc):
             return errorDesc.isEmpty ? "Unknown error" : errorDesc
