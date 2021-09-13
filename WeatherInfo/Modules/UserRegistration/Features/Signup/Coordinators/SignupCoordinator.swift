@@ -24,7 +24,7 @@ final class SignupCoordinator: BaseCoordinator<Void> {
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.setNavigationBarHidden(true, animated: true)
         viewController.viewModel = viewModel
-        
+        viewController.imagePicker = ImagePicker(presentationController: viewController, delegate: viewController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         

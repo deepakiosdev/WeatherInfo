@@ -4,6 +4,10 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location access is required to provide weather information</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app wants to take pictures.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app wants to use your photos.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
