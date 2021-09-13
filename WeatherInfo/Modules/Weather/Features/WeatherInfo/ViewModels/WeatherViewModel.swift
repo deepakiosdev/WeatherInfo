@@ -44,6 +44,7 @@ final class WeatherViewModel: WeatherViewModelProtocol {
         isFetchingData.accept(true)
         locationService.getCurrentLocation() { [weak self] (location, error) in            
             guard let location = location else {
+                self?.isFetchingData.accept(false)
                 return
             }
             self?.fetchWetherDetail(for: location)

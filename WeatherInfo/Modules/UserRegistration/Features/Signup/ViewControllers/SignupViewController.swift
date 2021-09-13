@@ -89,19 +89,16 @@ extension SignupViewController {
             .disposed(by: disposeBag)
 
         txfPassword.rx.text
-            .debug()
             .map{$0 ?? ""}
             .bind(to: viewModel.password)
             .disposed(by: disposeBag)
         
         txfDob.rx.text
-            .debug()
             .map{$0 ?? ""}
             .bind(to: viewModel.dob)
             .disposed(by: disposeBag)
         
         txfGender.rx.text
-            .debug()
             .map{$0 ?? ""}
             .bind(to: viewModel.gender)
             .disposed(by: disposeBag)

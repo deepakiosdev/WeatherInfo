@@ -143,6 +143,7 @@ extension WeatherViewController {
        
         btnRefresData.rx
             .tap
+            .debug()
             .bind { [weak self] _ in
                 self?.viewModel.fetchLocation()
         }

@@ -30,4 +30,5 @@
 
 
 ###Known Issues
-
+1. On signup screen sometime password texfield does not take input after display strong password. 
+    (soultuion - https://stackoverflow.com/questions/55378639/strong-password-autofill-appears-in-ios-simulator)
