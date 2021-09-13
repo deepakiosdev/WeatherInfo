@@ -5,6 +5,10 @@
 //  Created by Dipak Pandey on 13/09/21.
 //
 
+/*
+ Credit - https://theswiftdev.com/picking-images-with-uiimagepickercontroller-in-swift-5/
+ */
+
 import UIKit
 
 public protocol ImagePickerDelegate: AnyObject {

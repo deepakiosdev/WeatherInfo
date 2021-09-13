@@ -27,20 +27,25 @@ class SignupViewController: UIViewController, StoryboardInitializable {
     // MARK: - Life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        saveProfilePic()
         setupBindings()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        addDatePickerOnDOBTextField()
+        super.viewDidAppear(animated)
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         clearData()
         hideKeyboard()
         super.viewDidDisappear(animated)
     }
-    
+ 
 }
 
 // MARK: - Private methods
 extension SignupViewController {
+    
     //Clear text field's data and image
     private func clearData() {
         imgvProfilePic.image = nil
@@ -116,6 +121,26 @@ extension SignupViewController: ImagePickerDelegate {
 
     func didSelect(image: UIImage?) {
         imgvProfilePic.image = image
-        viewModel.profilePic = image?.pngData()
+        saveProfilePic()
     }
 }
+
+//MARK: DatePicker methods
+extension SignupViewController {
+    
+    private func addDatePickerOnDOBTextField() {
+        txfDob.setInputViewDatePicker(target: self, selector: #selector(tapDatePickerDone))
+    }
+    
+    @objc func tapDatePickerDone() {
+        //TODO: Add validation so that user can not select previous dates
+        if let datePicker = self.txfDob.inputView as? UIDatePicker {
+            let dateformatter = DateFormatter()
+            dateformatter.dateStyle = .medium
+            self.txfDob.text = dateformatter.string(from: datePicker.date)
+        }
+        self.txfDob.resignFirstResponder()
+    }
+    
+}
+

@@ -33,6 +33,7 @@
 		0BCBA38A26EEEE600067E28A /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCBA38826EEEE600067E28A /* ForecastCell.swift */; };
 		0BCBA38B26EEEE600067E28A /* ForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BCBA38926EEEE600067E28A /* ForecastCell.xib */; };
 		0BCBA38D26EEF4840067E28A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCBA38C26EEF4840067E28A /* ImagePicker.swift */; };
+		0BCBA39026EF00710067E28A /* UITextField+DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCBA38F26EF00710067E28A /* UITextField+DatePicker.swift */; };
 		0BEE8DF926EB238300E2450A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEE8DF826EB238300E2450A /* AppDelegate.swift */; };
 		0BEE8DFB26EB238300E2450A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEE8DFA26EB238300E2450A /* SceneDelegate.swift */; };
 		0BEE8DFD26EB238300E2450A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEE8DFC26EB238300E2450A /* SignupViewController.swift */; };
@@ -108,6 +109,7 @@
 		0BCBA38826EEEE600067E28A /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
 		0BCBA38926EEEE600067E28A /* ForecastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastCell.xib; sourceTree = "<group>"; };
 		0BCBA38C26EEF4840067E28A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		0BCBA38F26EF00710067E28A /* UITextField+DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+DatePicker.swift"; sourceTree = "<group>"; };
 		0BEE8DF526EB238300E2450A /* WeatherInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BEE8DF826EB238300E2450A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BEE8DFA26EB238300E2450A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -267,6 +269,14 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		0BCBA38E26EF003E0067E28A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0BCBA38F26EF00710067E28A /* UITextField+DatePicker.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0BEE8DEC26EB238300E2450A = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +303,7 @@
 		0BEE8DF726EB238300E2450A /* WeatherInfo */ = {
 			isa = PBXGroup;
 			children = (
+				0BCBA38E26EF003E0067E28A /* Extensions */,
 				0BCBA38226EE6BB30067E28A /* Utility */,
 				0BC7CE3326EE1E7B000B52B2 /* Networking */,
 				0BC7CE1726ED332C000B52B2 /* CoreData */,
@@ -949,6 +960,7 @@
 				0BCBA38D26EEF4840067E28A /* ImagePicker.swift in Sources */,
 				0BC7CE1326ED19BD000B52B2 /* UserValidationProtocol.swift in Sources */,
 				0BC7CE1926ED3367000B52B2 /* CoreDataManager.swift in Sources */,
+				0BCBA39026EF00710067E28A /* UITextField+DatePicker.swift in Sources */,
 				0BEE8E5526EB3F7000E2450A /* StoryboardInitializable.swift in Sources */,
 				0BEE8DF926EB238300E2450A /* AppDelegate.swift in Sources */,
 				0BC7CE3A26EE2058000B52B2 /* WAError.swift in Sources */,
