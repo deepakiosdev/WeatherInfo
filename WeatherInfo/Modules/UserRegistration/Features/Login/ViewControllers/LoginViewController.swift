@@ -74,7 +74,7 @@ extension LoginViewController {
             .disposed(by: disposeBag)
 
         btnSignup.rx.tap
-            .bind(to: viewModel.showSignup)
+            .bind(to: viewModel.showSignup)//TODO: Clear loggedin user data
             .disposed(by: disposeBag)
         
 

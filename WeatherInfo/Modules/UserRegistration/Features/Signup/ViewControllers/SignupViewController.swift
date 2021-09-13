@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 
 class SignupViewController: UIViewController, StoryboardInitializable {
+    
     @IBOutlet weak var imgvProfilePic: UIImageView!
     @IBOutlet weak var txfName: UITextField!
     @IBOutlet weak var txfEmail: UITextField!
@@ -81,6 +82,7 @@ extension SignupViewController {
             .map{$0 ?? ""}
             .bind(to: viewModel.dob)
             .disposed(by: disposeBag)
+        
         txfGender.rx.text
             .map{$0 ?? ""}
             .bind(to: viewModel.gender)

@@ -29,7 +29,7 @@ extension LoginService {
             return false
         }
         
-        if email == user.email && password == user.password {
+        if isValidEmail(email) && isValidPassword(password) && email == user.email && password == user.password {
             return true
         }
         showAlertWithMessage("Please enter valid credential")
@@ -38,7 +38,7 @@ extension LoginService {
     }
     
     func login(withEmail email: String, andPassword password: String) -> User? {
-        guard let user = getUser(), email == user.email && password == user.password else {
+        guard let user = getUser(), isValidEmail(email) && isValidPassword(password) && email == user.email && password == user.password else {
             showAlertWithMessage("Login falied.")
             return nil
         }

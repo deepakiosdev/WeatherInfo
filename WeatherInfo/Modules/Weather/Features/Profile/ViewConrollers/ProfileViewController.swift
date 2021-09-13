@@ -23,6 +23,8 @@ final class ProfileViewController: UIViewController, StoryboardInitializable {
     var viewModel: ProfileViewModel!
     private let disposeBag = DisposeBag()
 
+    // MARK: - Life Cycle methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()

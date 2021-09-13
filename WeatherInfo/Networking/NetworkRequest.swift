@@ -75,7 +75,6 @@ extension NetworkRequest {
         if let body = body {
             request.httpBody = body
         }
-        print("Request DebugDescription: \(request.debugDescription)")
         print("Request fields: \(String(describing: request.allHTTPHeaderFields))")
 
         return request
