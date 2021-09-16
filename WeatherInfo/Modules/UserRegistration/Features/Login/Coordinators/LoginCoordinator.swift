@@ -37,7 +37,7 @@ final class LoginCoordinator: BaseCoordinator<Void> {
                         })
             .disposed(by: disposeBag)
         
-        return Observable.never()
+        return Observable.empty()
     }
     
     private func showSignupScreen() {

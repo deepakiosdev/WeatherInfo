@@ -64,7 +64,7 @@ final class TabBarCoordinator: BaseCoordinator<Void> {
                 }
         }
 
-        return Observable.never()
+        return Observable.empty()
     }
     
     private func moveToLoginScreen() {

@@ -17,7 +17,7 @@ final class AppCoordinator: BaseCoordinator<Void> {
         self.window.backgroundColor = UIColor.white
     }
     
-    override func start() -> Observable<CoordinationResult> {
+    override func start() -> Observable<Void> {
         let registrationCoordinator = SignupCoordinator(window: window)
         return self.coordinate(to: registrationCoordinator)
     }

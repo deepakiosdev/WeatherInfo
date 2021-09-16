@@ -24,20 +24,6 @@ struct WeatherForecastModel {
     }
 }
 
-
-extension WeatherForecastModel: Encodable {
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(weaterDetails, forKey: .weaterDetails)
-        
-        var cityContainer = container.nestedContainer(keyedBy: CityKeys.self, forKey: .city)
-        try cityContainer.encode(cityName, forKey: .cityName)
-        try cityContainer.encode(country, forKey: .country)
-    }
-}
-
-
 extension WeatherForecastModel: Decodable {
     
     init(from decoder: Decoder) throws {
@@ -86,30 +72,6 @@ struct WeatherDetail {
     }
     
 }
-
-
-extension WeatherDetail: Encodable {
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(dateTime, forKey: .dateTime)
-
-        var mainContainer = container.nestedContainer(keyedBy: MainKeys.self, forKey: .main)
-        try mainContainer.encode(currentTemperature, forKey: .currentTemperature)
-        try mainContainer.encode(minTemperature, forKey: .minTemperature)
-        try mainContainer.encode(maxTemperature, forKey: .maxTemperature)
-        try mainContainer.encode(humidity, forKey: .humidity)
-        
-        var weatherContainer = container.nestedContainer(keyedBy: WeatherKeys.self, forKey: .weather)
-        try weatherContainer.encode(description, forKey: .description)
-        
-        var windContainer = container.nestedContainer(keyedBy: WindKeys.self, forKey: .wind)
-        try windContainer.encode(windSpeed, forKey: .windSpeed)
-        
-    }
-    
-}
-
 
 extension WeatherDetail: Decodable {
     

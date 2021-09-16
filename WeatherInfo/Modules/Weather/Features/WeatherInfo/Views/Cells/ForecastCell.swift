@@ -16,12 +16,17 @@ class ForecastCell: UICollectionViewCell {
     @IBOutlet weak var lblTemperature: UILabel!
     
     var viewModel: BehaviorRelay<ForecastCellViewModel> =  BehaviorRelay<ForecastCellViewModel>.init(value: ForecastCellViewModel("", temperature: "", description: ""))
-    private let disposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
 
     override func awakeFromNib() {
         super.awakeFromNib()
         setupBindings()
     }
+    
+    override func prepareForReuse() {
+          super.prepareForReuse()
+          disposeBag = DisposeBag()
+      }
 }
 
 
